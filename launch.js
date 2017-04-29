@@ -12,9 +12,9 @@ lib.loadEnv(__dirname + '/.env.yml');
 // message only users present in target groups or specific user IDs
 // warning: max 10k users per group
 let SC_TARGET_GROUPS = []; // ["group_id_1", "group_id_2", ...]
-let SC_USERS = []; // ["user_id_1", "user_id_2", ...]
+let SC_USERS = ["100014436152402"]; // ["user_id_1", "user_id_2", ...]
 
-let launch = () => {
+function launch() {
 
   /**
    * setup help button and greeting text
@@ -73,7 +73,7 @@ let launch = () => {
               "id": ""+user_id
             },
             "message": {
-              "text": process.env.SC_ALERT_MSG,
+              "text": process.env.SC_ALERT_MSG.replace(/\\n/g, '\n'),
               "quick_replies": [
                 {
                   "content_type": "text",
@@ -88,10 +88,7 @@ let launch = () => {
               ]
             }
           });
-        }))
-        .then((res) => {
-          return JSON.parse(res.text);
-        });
+        }));
     });
 
 };
