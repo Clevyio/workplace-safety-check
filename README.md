@@ -1,4 +1,4 @@
-![Clevy logo](https://raw.githubusercontent.com/Clevyio/workplace-safety-check/master/assets/logo_clevy_workplace.png)
+[![Clevy logo](https://raw.githubusercontent.com/Clevyio/workplace-safety-check/master/assets/logo_clevy_workplace.png)](https://www.clevy.io)
 
 # Workplace Safety Check Custom Integration
 
