@@ -39,11 +39,9 @@ To deploy on AWS Lambda (recommended solution)
 2. deploy to lambda with `sls deploy`
 3. retrieve the wbehook URL and use that as your callback URL
 
-To run the alert, simply run `sls invoke local -f launch`
-
 # Launching an alert
 
-Once everything is correctly setup, launching an alert simply requires you to run `node launch`.  
+Once everything is correctly setup, launching an alert simply requires you to run `node launch`, or `sls invoke local -f launch` if you use serverless directly.  
 The webhook (in `handler.js`) will handle any response for you.
 
 # Extend the app
