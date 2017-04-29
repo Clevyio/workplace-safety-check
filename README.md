@@ -6,6 +6,10 @@ This application emulates the missing Safety Check feature on Workplace by Faceb
 
 This custom integration also has hooks for saving the status of the request into a DB (alert sent, alert read, user is OK, user needs help) as well as notifying any given administrator of users requiring some help.
 
+# Demo
+
+[click here](https://raw.githubusercontent.com/Clevyio/workplace-safety-check/master/assets/safety_check_demo.mp4)
+
 # Requirements
 
 You need to be able to run node version 6.10 and be able to host code capable of handling the load of the amount of users you need to notify.
