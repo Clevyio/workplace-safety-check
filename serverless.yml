@@ -1,0 +1,41 @@
+service: workplace-safety-check
+
+package:
+  exclude:
+    - node_modules/aws-sdk/**
+
+custom: ${file(.env.yml)}
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: eu-west-1
+  stage: dev
+  profile: eundigital-sechetfr
+  environment:
+    APP_VERIFY_TOKEN: ${self:custom.APP_VERIFY_TOKEN}
+    APP_ACCESS_TOKEN: ${self:custom.APP_ACCESS_TOKEN}
+    APP_SECRET: ${self:custom.APP_SECRET}
+    GRAPH_API_BASE: ${self:custom.GRAPH_API_BASE}
+    SC_ALERT_MSG: ${self:custom.SC_ALERT_MSG}
+    SC_OK_BTN_TEXT: ${self:custom.SC_OK_BTN_TEXT}
+    SC_HELP_BTN_TEXT: ${self:custom.SC_HELP_BTN_TEXT}
+    SC_INFO_BTN_TEXT: ${self:custom.SC_INFO_BTN_TEXT}
+    SC_IDLE_INFO_MSG: ${self:custom.SC_IDLE_INFO_MSG}
+    USER_NEED_HELP_RESPONSE: ${self:custom.USER_NEED_HELP_RESPONSE}
+    USER_IS_OK_RESPONSE: ${self:custom.USER_IS_OK_RESPONSE}
+    USER_ANY_TEXT_RESPONSE: ${self:custom.USER_ANY_TEXT_RESPONSE}
+
+functions:
+  webhook:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webhook
+          method: GET
+          integration: lambda
+      - http:
+          path: webhook
+          method: POST
+          integration: lambda
+
