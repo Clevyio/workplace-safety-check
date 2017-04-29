@@ -4,17 +4,27 @@ This application emulates the missing Safety Check feature on Workplace by Faceb
 
 This custom integration also has hooks for saving the status of the request into a DB (alert sent, alert read, user is OK, user needs help) as well as notifying any given administrator of users requiring some help.
 
+# Requirements
+
+You need to be able to run node version 6.10 and be able to host code capable of handling the load of the amount of users you need to notify.
+Alternatively, this project comes with a custom integration with the serverless framework that allows you to deploy code quickly in the cloud (tested on AWS Lambda).
+
+Adapting for your own hosting needs should not be complicated. We can help you host this project if you need assistance. Contact us on contact@clevy.io.
+
 # Installation
 
-1. clone this repository on a server that can run nodejs (tested with node 6.10.2). Alternatively, this project comes with a custom integration with the serverless that allows you to deploy code quickly in the cloud (tested on AWS Lambda).
+Locally:  
+1. clone this repository on a server that can run nodejs (tested with node 6.10).
 2. run `npm install` to install all dependencies.
-3. setup a custom integration in your Workplace admin panel with the following settings: `read content`, `manage groups`, `message any member`.
-3. create a page webhook with the following callback URL `http://{hostname}/webhook`, and pick any string you want for `Verify Token`.
-3. subscribe your webhook to `messages`, `message_deliveries`, `messaging_postbacks` and `message_reads`.
-3. retrieve the App Secret and create and Access Token for your app.
-3. give it a name and icon of your liking, then click Save.
 3. create a custom `.env.yml` file based on `.env.example.yml` and edit accordingly to your parameters and needs.
 4. in `launch.js`, setup the target groups and users for your safety check alert. You can add any number of group IDs as long as the number of users per group is smaller than 10k, and any number of single user IDs.
+
+On workplace:  
+1. setup a custom integration in your Workplace admin panel with the following settings: `read content`, `manage groups`, `message any member`.
+2. create a page webhook with the following callback URL `http://{hostname}/webhook`, and pick any string you want for `Verify Token`.
+3. subscribe your webhook to `messages`, `message_deliveries`, `messaging_postbacks` and `message_reads`.
+4. retrieve the App Secret and create and Access Token for your app.
+5. give it a name and icon of your liking, then click Save.
 
 # Launching an alert
 
@@ -29,7 +39,7 @@ The places where you should add your custom code for this are documented. Search
 
 # Assistance
 
-If you require any help in setting this up, you can open an issue or alternatively, contact us on github@clevy.io for getting help with custom integrations.
+If you require any help in setting this up, you can open an issue or alternatively, contact us on contact@clevy.io for getting help with custom integrations.
 
 # About Clevy
 
