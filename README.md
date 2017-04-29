@@ -12,7 +12,7 @@ This custom integration also has hooks for saving the status of the request into
 
 # Requirements
 
-You need to be able to run node version 6.10 and be able to host code capable of handling the load of the amount of users you need to notify.
+You need to be able to run node version 6.10 and host on a server capable of handling the load of the amount of users you need to notify.  
 Alternatively, this project comes with a custom integration with the serverless framework that allows you to deploy code quickly in the cloud (tested on AWS Lambda).
 
 Adapting for your own hosting needs should not be complicated. We can help you host this project if you need assistance. Contact us on contact@clevy.io.
