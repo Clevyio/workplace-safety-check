@@ -1,3 +1,5 @@
+![Clevy logo](https://raw.githubusercontent.com/Clevyio/workplace-safety-check/master/assets/logo_clevy_workplace.png)
+
 # Workplace Safety Check Custom Integration
 
 This application emulates the missing Safety Check feature on Workplace by Facebook. It sends a message to all members of a list of groups within your community or a list of users directly and asks them whether they need help.
