@@ -39,3 +39,5 @@ functions:
           method: POST
           integration: lambda
 
+  launch:
+    handler: launch.run

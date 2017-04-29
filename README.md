@@ -32,6 +32,15 @@ On workplace:
 4. retrieve the App Secret and create and Access Token for your app.
 5. give it a name and icon of your liking, then click Save.
 
+# Serverless hosting on AWS Lambda
+
+To deploy on AWS Lambda (recommended solution)
+1. install serverless `npm i -g serverless`
+2. deploy to lambda with `sls deploy`
+3. retrieve the wbehook URL and use that as your callback URL
+
+To run the alert, simply run `sls invoke local -f launch`
+
 # Launching an alert
 
 Once everything is correctly setup, launching an alert simply requires you to run `node launch`.  
