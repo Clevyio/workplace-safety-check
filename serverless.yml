@@ -11,7 +11,6 @@ provider:
   runtime: nodejs6.10
   region: eu-west-1
   stage: dev
-  profile: eundigital-sechetfr
   environment:
     APP_VERIFY_TOKEN: ${self:custom.APP_VERIFY_TOKEN}
     APP_ACCESS_TOKEN: ${self:custom.APP_ACCESS_TOKEN}
