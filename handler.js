@@ -46,7 +46,7 @@ module.exports.webhook = (event, context, callback) => {
           }
 
           /**
-           * delivery event (save in database that the user read the message)
+           * read event (save in database that the user read the message)
            * EXTENSION: in this hook, you can save in a database who read the message but didn't reply yet
            */
           else if (msg.read) {
